@@ -1,0 +1,32 @@
+#include <iostream>
+
+using namespace std;
+
+void myFunction() {
+
+    cout << "Function Bitch!" << endl;
+}
+
+void forLoop() {
+    for (int i = 0; i < 5; i++) {
+  cout << i << "\n";
+}
+}
+
+void forWhile() {
+        int i = 0;
+        while (i < 5) {
+        cout << i << "\n";
+        i++;
+  }
+  
+
+}
+
+int main() {
+    myFunction();
+    cout << "Hello World";
+    forLoop();
+    forWhile();
+    return 0;
+}
