@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+// Function to print an array
+// Function uses for loop to cycle through the array and print each element
+void printArray(int array[], int size) {
+  for (int i = 0; i < size; i++) {
+    cout << array[i] << " ";
+  }
+  cout << endl;
+}
+
+// Function cycles through the array and compares each element to the previous element in the array.
+void insertionSort(int array[], int size) {
+  for (int step = 1; step < size; step++) { // initializes step at the beginning of the array
+    int key = array[step];  // initializes key to be equal to step's place in the array
+    int j = step - 1; // Initializes j as a value one less than step
+
+    // Compare key with each element on the left of it until an element smaller than
+    // it is found.
+    // For descending order, change key<array[j] to key>array[j].
+    while (key < array[j] && j >= 0) { // While key is less than j in the array and j is greater or equal to 0
+      array[j + 1] = array[j]; // array of j = 1(step) is equal to j
+      --j; // decreases the value of j by 1
+    }
+    array[j + 1] = key; // step's place in the array is being made equal to key
+  }
+}
+
+// Driver code
+int main() {
+  int data[] = {9, 5, 1, 4, 3};
+  int size = sizeof(data) / sizeof(data[0]);
+  insertionSort(data, size);
+  cout << "Sorted array in ascending order:\n";
+  printArray(data, size);
+}
